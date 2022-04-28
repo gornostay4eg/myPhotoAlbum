@@ -1,0 +1,27 @@
+{{#if user}}
+<div class="row">
+    <div class="col">
+        {{> postForm}}
+    </div>
+</div>
+{{/if}}
+
+<div class="row postWrapper">
+    {{#each posts}}
+    <div data-id="{{this.id}}" class="col-4">
+    <div class="card" style="width: 18rem;">
+        <img src="/img/{{this.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.body}}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            {{#if this.owner}}
+            <button type="button">Delete</button>
+            {{/if}}
+        </div>
+    </div>
+    </div>
+    {{/each}}
+</div>
+
+<script defer src="/js/index.js"></script>
