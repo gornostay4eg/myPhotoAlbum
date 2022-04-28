@@ -1,4 +1,3 @@
-require('dotenv').config();
 
 const express = require('express');
 const morgan = require('morgan');
@@ -35,11 +34,14 @@ app.use(session({
   store: new FileStore(),
 }));
 
+
+
 app.use(middlewares.addToLocals);
 app.use('/', userRouter);
-app.use('/albums',albumsRouter)
-app.use('/photos',addPhotosRouter)
+app.use('/albums', albumsRouter);
+app.use('/photos', addPhotosRouter);
 
 app.listen(PORT, () => {
   console.log('Server started', PORT);
 });
+

@@ -1,6 +1,10 @@
+
 const router = require('express').Router();
-const sha256 = require('sha256');
 const { User } = require('../db/models');
+
+router.get('/', (req, res) => {
+  res.send('чекни базу');
+});
 
 router
   .route('/registration')
@@ -25,7 +29,7 @@ router
       });
     }
     req.session.user = { id: newUser.id, name: newUser.name };
-    return res.redirect('/');
+    return res.redirect('/albums');
   });
 
 router
@@ -47,18 +51,19 @@ router
         message: 'Пользователь не найден',
       });
     }
-    if (sha256(password) !== currentUser.password) {
+    if (password !== currentUser.password) {
       return res.render('signin', { message: 'Пароль неверный' });
     }
-    if (currentUser.password === sha256(password)) {
+    if (currentUser.password === password) {
       req.session.user = { id: currentUser.id, name: currentUser.name };
-      return res.redirect('/');
+      console.log(req.session);
+      return res.redirect('/albums');
     }
   });
 
 router.route('/exit').get((req, res) => {
   req.session.destroy();
-  res.clearCookie('music').redirect('/');
+  res.clearCookie('photo').redirect('/');
 });
 
 module.exports = router;
