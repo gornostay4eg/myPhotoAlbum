@@ -10,17 +10,13 @@ router
     res.render('addPhoto', { allAlbum });
   })
   .post(async (req, res) => {
-    if (req.body.album_id) {
-      try {
-        const newPhoto = await Photo.create({ ...req.body, user_id: req.session.user.id });
-        res.redirect('/albums');
-      } catch (error) {
-        console.log('Errrooorr', error);
-        res.sendStatus(500);
-      }
-    } else {
-      // FIX: alert('Выберите альбом для фото'); to frontend
-      res.status(401).end();
+    try {
+      console.log(req.body);
+      const newPhoto = await Photo.create({ ...req.body, user_id: req.session.user.id });
+      res.redirect('/albums');
+    } catch (error) {
+      console.log('Errrooorr', error);
+      res.sendStatus(500);
     }
   });
 

@@ -28,8 +28,6 @@ router.post('/addalbum', async (req, res) => {
   }
 });
 
-// router.delete('/deletealbum', async (req, res) => {
-
 // /albums/:id - страница конкретного альбома
 router.get('/:id', async (req, res) => {
   try {
