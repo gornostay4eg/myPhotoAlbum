@@ -1,0 +1,16 @@
+<h1>Редактировать фото</h1>
+
+{{!-- ??????? --}}
+<form action="/photos/{{photo.id}}" method="post"> 
+
+<div><img src="{{photo.src}}" alt="{{photo.title}}"></div>
+<div>
+<label>
+<p>Редактировать описание:</p> 
+<input name="title" type="text">
+</label>
+</div>
+
+ <button type='submit'>Редактировать</button>
+
+</form>
