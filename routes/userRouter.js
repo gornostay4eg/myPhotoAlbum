@@ -1,10 +1,8 @@
-
-
 const router = require('express').Router();
 const { User } = require('../db/models');
 
 router.get('/', (req, res) => {
-  res.send('чекни базу');
+  res.render('main');
 });
 
 router
