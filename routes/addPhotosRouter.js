@@ -1,19 +1,19 @@
 const router = require('express').Router();
-const { Photo } = require('../db/models');
+const { Photo, Album } = require('../db/models');
 const { checkAuth } = require('../middleware/check');
 
 // "/photos/"
 router
   .route('/')
   .get(async (req, res) => {
-    const allPhoto = await Photo.findAll({ where: { user_id: req.session.user.id }, order: [['createdAt', 'DESC']], raw: true });
-    res.render('addPhoto', { allPhoto });
+    const allAlbum = await Album.findAll({ where: { user_id: req.session.user.id }, order: [['createdAt', 'DESC']], raw: true });
+    res.render('addPhoto', { allAlbum });
   })
   .post(async (req, res) => {
     if (req.body.album_id) {
       try {
         const newPhoto = await Photo.create({ ...req.body, user_id: req.session.user.id });
-        res.json({ newPhoto });
+        res.redirect('/albums');
       } catch (error) {
         console.log('Errrooorr', error);
         res.sendStatus(500);

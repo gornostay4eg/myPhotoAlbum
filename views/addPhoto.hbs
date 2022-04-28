@@ -1,0 +1,22 @@
+<center>
+    <br>
+    <form name="addPhoto">
+        <div class="d-flex w-50">
+            <div class="w-50">
+                <input type="text" name={{photo.title}} class="form-control" placeholder="title">
+                <input type="text" name={{photo.src}} class="form-control" placeholder="photo">
+            </div>
+            <div>
+                <p>Please select your photoalbum:</p>
+        <div class="radio">
+            <input type="radio" id="choiceAlbum" name="album" value="album">
+            {{#each album_id}}
+        <label for="contactChoice1">{{album_id}}</label>
+    {{/each}}
+  <div>
+                <button type="submit" class="btn btn-outline-success">добавить</button>
+            </div>
+        </div>
+    </form>
+</center>
+
