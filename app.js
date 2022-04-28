@@ -34,7 +34,10 @@ app.use(session({
   store: new FileStore(),
 }));
 
-
+app.use((req, res, next) => {
+  res.locals.userId = req.session?.user.id;
+  next();
+});
 
 app.use(middlewares.addToLocals);
 app.use('/', userRouter);
