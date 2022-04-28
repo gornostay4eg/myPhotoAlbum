@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 const { Op } = require("sequelize");
 const { Album, Photo } = require('../db/models');
@@ -43,4 +44,5 @@ router.get(':id', async (req, res) => {
 
 
 module.exports = router
+
 
