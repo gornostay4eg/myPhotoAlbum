@@ -3,8 +3,9 @@
     <form name="addPhoto" action="/photos/" method="post">
         <div class="d-flex w-50">
             <div class="w-50">
-                <input type="text" name="title" class="form-control" placeholder="title">
-                <input type="text" name="src" class="form-control" placeholder="photo">
+                <form enctype="milpipart/form-data" method="post">
+                <input type="file" name="title">
+                </form>
             </div>
             <div>
                 <p>Please select your photoalbum:</p>
