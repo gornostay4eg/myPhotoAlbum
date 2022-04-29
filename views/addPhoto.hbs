@@ -1,19 +1,21 @@
 <center>
     <br>
-    <form name="addPhoto">
+    <form name="addPhoto" action="/photos/" method="post">
         <div class="d-flex w-50">
             <div class="w-50">
-                <input type="text" name={{photo.title}} class="form-control" placeholder="title">
-                <input type="text" name={{photo.src}} class="form-control" placeholder="photo">
+                <form enctype="milpipart/form-data" method="post">
+                <input type="file" name="title">
+                </form>
             </div>
             <div>
                 <p>Please select your photoalbum:</p>
-        <div class="radio">
-            <input type="radio" id="choiceAlbum" name="album" value="album">
-            {{#each album_id}}
-        <label for="contactChoice1">{{album_id}}</label>
-    {{/each}}
-  <div>
+       <div class="dropdown">
+    <select name="album_id" class="dropdown-select">
+        {{#each allAlbum}}
+        <option>{{this.id}}  {{this.title}}</option>
+      {{/each}}
+    </select>
+  </div>
                 <button type="submit" class="btn btn-outline-success">добавить</button>
             </div>
         </div>

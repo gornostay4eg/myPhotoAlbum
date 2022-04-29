@@ -1,20 +1,52 @@
-/* главная старница */
+/* главная страница */
+.second {
+  margin-left:auto;
+	margin-right:auto;
+	width:900px;
+	height: 750px;
+	background-attachment: scroll;
+  background-color: wheat;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.container-fluid{ 
+  background-color: rgb(212, 212, 187);
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.wow_fadeInUp {
+  font-size: 56px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  text-align: right;
+  margin-top: 450px;
+}
+.wow_fadeInUp_white-color {
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  text-align: right;
+  margin-bottom: 450px;
+}
+
 /* регистрация */
 *{box-sizing:border-box}
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i&subset=cyrillic';
-body {
-  margin: 0;
+.all {
   background: #F7F7F7;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: 'Open Sans', sans-serif;
 }
 .form-wrap {
-  width: 550px;
-  background: #ffd500;
+  width: 650px;
+  height: 450px;
+  background: #e4dfca;
   border-radius: 20px;
+  margin: 0;
+  
 }
 .form-wrap *{transition: .1s linear}
 .profile {
@@ -26,23 +58,23 @@ body {
 form {
   background: white;
   float: left;
-  width: calc(100% - 240px);
+  width: calc(100% - 200px);
   padding: 30px;
   border-radius: 0 20px 20px 0;
   color: #7b7b7b; 
 }
-.form-wrap:after, form div:after {
+/* .form-wrap:after, form div:after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 form div {
   margin-bottom: 15px;
   position: relative;
 }
 h1 {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 200;
   position: relative;
   margin-top: 50px;
 }

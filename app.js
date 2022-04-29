@@ -1,4 +1,3 @@
-
 const express = require('express');
 const morgan = require('morgan');
 const hbs = require('hbs');
@@ -29,13 +28,13 @@ app.use(session({
   secret: 'session',
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false },
+  cookie: { httpOnly: true },
   name: 'photo',
   store: new FileStore(),
 }));
 
 app.use((req, res, next) => {
-  res.locals.userId = req.session?.user.id;
+  res.locals.userId = req.session?.user?.id;
   next();
 });
 
@@ -47,4 +46,3 @@ app.use('/photos', addPhotosRouter);
 app.listen(PORT, () => {
   console.log('Server started', PORT);
 });
-
