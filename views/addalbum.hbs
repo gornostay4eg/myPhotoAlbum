@@ -1,0 +1,29 @@
+<h1>Добавить альбом</h1>
+
+<form action="/albums/addalbum" method="post">
+
+<div>
+<label>
+<p>Название альбома</p> 
+<input name="title" type="text">
+</label>
+</div>
+
+<div>
+<label>
+<p>Альбом доступен всем</p>
+    <input type="radio" name="status" value="true">
+  </label>
+  </div>
+
+
+<div>
+  <label>
+      <p>Альбом могу просматривать только я</p>
+    <input type="radio" name="status" value="false">
+  </label>
+  </div>
+
+  <button type='submit'>Создать альбом</button>
+
+</form>

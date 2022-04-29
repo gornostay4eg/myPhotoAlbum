@@ -1,7 +1,9 @@
-
 const express = require('express');
 const morgan = require('morgan');
 const hbs = require('hbs');
+const multer = require('multer');
+
+const upload = multer({ dest: 'uploads/' });
 const path = require('path');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
@@ -16,25 +18,28 @@ const middlewares = require('./middleware/check');
 const app = express();
 hbs.registerPartials(path.join(process.env.PWD, 'views/partials'));
 
-app.set('view engine', 'hbs');
-app.set('views', path.join(process.env.PWD, 'views'));
-
-app.use(express.static(path.join(process.env.PWD, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan('dev'));
+
+app.set('view engine', 'hbs');
+app.set('views', path.join(process.env.PWD, 'views'));
 
 app.use(cookieParser());
 app.use(session({
   secret: 'session',
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false },
+  cookie: { httpOnly: true },
   name: 'photo',
   store: new FileStore(),
 }));
 
-
+app.use((req, res, next) => {
+  res.locals.userId = req.session?.user?.id;
+  next();
+});
 
 app.use(middlewares.addToLocals);
 app.use('/', userRouter);
@@ -44,4 +49,3 @@ app.use('/photos', addPhotosRouter);
 app.listen(PORT, () => {
   console.log('Server started', PORT);
 });
-

@@ -1,0 +1,22 @@
+<center>
+    <br>
+    <form name="addPhoto" action="/photos/" method="post" enctype="multipart/form-data">
+        <div class="d-flex w-50">
+            <div class="w-50">
+                <input type="file" name="src">
+            </div>
+            <div>
+                <p>Please select your photoalbum:</p>
+       <div class="dropdown">
+    <select name="albumName" class="dropdown-select">
+        {{#each allAlbum}}
+        <option>{{this.title}}</option>
+      {{/each}}
+    </select>
+  </div>
+                <button type="submit" class="btn btn-outline-success">добавить</button>
+            </div>
+        </div>
+    </form>
+</center>
+

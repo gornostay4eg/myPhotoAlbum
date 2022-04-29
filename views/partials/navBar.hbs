@@ -1,4 +1,4 @@
-<header role = "banner">
+<header class="navBar" role = "banner">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Мой фотоальбом</a>
@@ -9,7 +9,10 @@
         </li>
         {{#if user}}
         <li class="nav-item">
-          <a class="nav-link" href="/addPhoto">Добавить фотографию</a>
+          <a class="nav-link" href="/photos">Добавить фотографию</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/albums/addalbum">Добавить альбом</a>
         </li>
          <li class="nav-item">
           <p>{{user.name}}</p>
@@ -19,10 +22,10 @@
         </li>
         {{else}}
         <li class="nav-item">
-          <a class="nav-link" href="/user/registration">Регистрация</a>
+          <a class="nav-link" href="/registration">Регистрация</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/user/autorization">Вход</a>
+          <a class="nav-link" href="/autorization">Вход</a>
         </li>
         {{/if}}
       </ul>
