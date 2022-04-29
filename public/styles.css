@@ -2,10 +2,9 @@
 .second {
   margin-left:auto;
 	margin-right:auto;
-	width:900px;
-	height: 750px;
 	background-attachment: scroll;
-  background-color: wheat;
+  background: url("https://studyfoto.ru/wp-content/uploads/2016/09/%D1%81%D0%B0%D0%BC%D0%BE%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B0-2-%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%BA%D1%80%D0%B8%D0%B7%D0%B8%D1%81.jpg") no-repeat;
+  background-size: cover;
 	background-repeat: no-repeat;
 	background-position: right center;
 }
@@ -19,7 +18,7 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-style: italic;
   text-align: right;
-  margin-top: 450px;
+  margin-top: 650px;
 }
 .wow_fadeInUp_white-color {
   font-size: 18px;
@@ -119,27 +118,148 @@ select::-ms-expand {
   border-width: 8px 5px 0 5px;
   border-color: #7b7b7b transparent transparent transparent;
 }
-button {
-  padding: 10px 0;
-  border-width: 0;
-  display: block;
-  width: 120px;
-  margin: 25px auto 0;
-  background: #60e6c5;
-  color: white;
-  font-size: 14px;
-  outline: none;
-  text-transform: uppercase;
-}
-button:hover {
-  color:  #050505;
-  text-shadow: 0 0 1px  #000000;
-}
+
 @media (max-width: 600px) {
   body {display: block}
   .form-wrap {margin: 20px auto; max-width: 550px; width:100%}
   .profile, form {float: none; width: 100%}
   h1 {margin-top: auto; padding-bottom: 50px;}
   form {border-radius: 0 0 20px 20px}
+}
+
+/* вход */
+*{box-sizing:border-box}
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i&subset=cyrillic';
+.auto {
+  background: #F7F7F7;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formup {
+  width: 650px;
+  height: 450px;
+  background: #e4dfca;
+  border-radius: 20px;
+  margin: 0;
+  
+}
+.formup *{transition: .1s linear}
+.profile {
+  width: 240px;
+  float: left;
+  text-align: center;
+  padding: 30px;
+}
+form {
+  background: white;
+  float: left;
+  width: calc(100% - 200px);
+  padding: 30px;
+  border-radius: 0 20px 20px 0;
+  color: #7b7b7b; 
+}
+/* .form-wrap:after, form div:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+form div {
+  margin-bottom: 15px;
+  position: relative;
+}
+h1 {
+  font-size: 12px;
+  font-weight: 200;
+  position: relative;
+  margin-top: 50px;
+}
+label, span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  border-width: 0;
+  background: #e6e6e6;
+  outline: none;
+  margin: 0;
+}
+input[type="text"]:focus, input[type="email"]:focus {
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+
+
+
+/* общие альбомы */
+.albumStr {
+  background-color: rgb(202, 135, 33);
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.text1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  color: #000000;
+  text-align: center;
+  margin-top: 20px;
+}
+.card-body {
+  font-style: italic;
+}
+A {
+  color: rgb(10, 10, 10);
+}
+A:visited {
+  color: #cecece; /* Цвет посещенных ссылок */
+ }
+A:active {
+  color: #ffff00;
+}
+/* добавление альбома */
+.addAlb {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  color: #000000;
+  text-align: center;
+  margin-top: 20px;
+}
+.color {
+ background-color: burlywood;
+  height: max-content;
+}
+form {
+margin-left: 200px;
+}
+/* добавить фото */
+.style {
+  background-color: burlywood;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  align-items: center;
+}
+.d-flex-w-50{
+  background-color: cornsilk;
+  background-position: right center;
+  margin-left:auto;
+	margin-right:auto;
+  background-size: cover;
+	background-repeat: no-repeat;
+}
+/* альбомы */
+.bigContainer {
+  background-color: darkkhaki;
+  margin-left:auto;
+	margin-right:auto;
+	background-attachment: scroll;
+ 
+  background-size: cover;
+	background-repeat: no-repeat;
+	background-position: right center;
 }
 

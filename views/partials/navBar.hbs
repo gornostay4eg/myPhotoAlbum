@@ -14,12 +14,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/albums/addalbum">Добавить альбом</a>
         </li>
-         <li class="nav-item">
-          <p>{{user.name}}</p>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="/exit">Выход</a>
         </li>
+        <p> Привет,{{{user.name}}}</p>
         {{else}}
         <li class="nav-item">
           <a class="nav-link" href="/registration">Регистрация</a>
