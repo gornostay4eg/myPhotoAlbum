@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Photo, Album } = require('../db/models');
 const { checkAuth } = require('../middleware/check');
+const multer = require('../middleware/multer.middleware');
 
 // "/photos/"
 router
@@ -9,12 +10,12 @@ router
     const allAlbum = await Album.findAll({ where: { user_id: req.session.user.id }, order: [['createdAt', 'DESC']], raw: true });
     res.render('addPhoto', { allAlbum });
   })
-  .post(async (req, res) => {
+  .post(multer.single('src'), async (req, res) => {
     try {
       const album = await Album.findOne({ where: { title: req.body.albumName }, raw: true });
-      // console.log('============================================');
-      // console.log(album);
-      // console.log('============================================');
+      console.log('============================================');
+      console.log(req.files);
+      console.log('============================================');
       const newPhoto = await Photo.create({ ...req.body, album_id: album.id, user_id: req.session.user.id });
       res.redirect('/albums');
     } catch (error) {

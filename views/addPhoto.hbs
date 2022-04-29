@@ -1,11 +1,9 @@
 <center>
     <br>
-    <form name="addPhoto" action="/photos/" method="post">
+    <form name="addPhoto" action="/photos/" method="post" enctype="multipart/form-data">
         <div class="d-flex w-50">
             <div class="w-50">
-                <form enctype="milpipart/form-data" method="post">
-                <input type="file" name="title">
-                </form>
+                <input type="file" name="src">
             </div>
             <div>
                 <p>Please select your photoalbum:</p>
