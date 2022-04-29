@@ -1,7 +1,8 @@
 const bigContainer = document.querySelector('.bigContainer');
 
 bigContainer?.addEventListener('click', async (e) => {
-  e.preventDefault();
+  console.log(e);
+  // e.preventDefault();
   if (e.target.className === 'deletephoto') {
     const parent = e.target.closest('[data-id]');
     const { id } = parent.dataset;
@@ -13,4 +14,3 @@ bigContainer?.addEventListener('click', async (e) => {
     }
   }
 });
-

@@ -5,7 +5,7 @@
 {{#each photos}}
 <div class="container" data-id={{this.id}}>
 <p><img src="{{this.src}}" alt="{{this.title}}" width="200" height="200"></p>
-<button onclick="http://localhost:3000/photos/{{this.id}}">Редактировать фото</button>
+<button ><a href="http://localhost:3000/photos/{{this.id}}">Редактировать фото</a></button>
 {{!-- <a type="button" src="http://localhost:3000/photos/{{this.id}}">редактировать фото</a> --}}
 <button class="deletephoto">Удалить фото</button>
 <p>{{this.title}}</p>
