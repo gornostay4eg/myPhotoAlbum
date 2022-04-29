@@ -4,13 +4,14 @@
         <div class="d-flex w-50">
             <div class="w-50">
                 <input type="file" name="src">
+
             </div>
             <div>
                 <p>Please select your photoalbum:</p>
        <div class="dropdown">
-    <select name="albumName" class="dropdown-select">
+    <select name="one" class="dropdown-select">
         {{#each allAlbum}}
-        <option>{{this.title}}</option>
+      <option value="">{{this.title}}</option>
       {{/each}}
     </select>
   </div>
@@ -18,5 +19,5 @@
             </div>
         </div>
     </form>
-</center>
+</div>
 

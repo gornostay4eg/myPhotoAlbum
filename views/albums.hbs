@@ -1,21 +1,44 @@
 
-{{> navBar}}
+
+<div class="albumStr">
+<div class="albumMy">
+  <div class="text1">
+
 <div class="bigContainer">
+
 <h1>Мои альбомы</h1>
+</div>
 <ul>
 {{#each userAlbums}}
+
+
 <div class="container" data-id={{this.id}}>
 <li><a href="/albums/{{this.id}}">{{this.title}}</a></li>
 <button class="deletealbum">Удалить альбом</button>
-</div>
-{{/each}}
-</ul>
 
-<h1>Альбомы других пользователей</h1>
-<ul>
-{{#each allAlbums}}
-<li><a href="/albums/{{this.id}}">{{this.title}}</a></li>
+</div>
 {{/each}}
 </ul>
 </div>
+
+<div class="albumStr">
+<div class="albumMy">
+  <div class="text1">
+<h1>Альбомы других пользователей</h1>
+</div>
+<ul>
+{{#each userAlbums}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5><a href="/albums/{{this.id}}">{{this.title}}</a></h5>
+<div class="delete">
+<button id="deletealbum">Удалить альбом</button>
+</div>
+</div>
+</div>
+{{/each}}
+</ul>
+</div>
+
 <script src="/js/deleteAlbum.js"></script>
+
