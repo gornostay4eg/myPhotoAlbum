@@ -11,8 +11,11 @@ router
   })
   .post(async (req, res) => {
     try {
-      console.log(req.body);
-      const newPhoto = await Photo.create({ ...req.body, user_id: req.session.user.id });
+      const album = await Album.findOne({ where: { title: req.body.albumName }, raw: true });
+      // console.log('============================================');
+      // console.log(album);
+      // console.log('============================================');
+      const newPhoto = await Photo.create({ ...req.body, album_id: album.id, user_id: req.session.user.id });
       res.redirect('/albums');
     } catch (error) {
       console.log('Errrooorr', error);
