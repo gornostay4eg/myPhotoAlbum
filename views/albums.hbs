@@ -1,9 +1,13 @@
 
 {{> navBar}}
+<div class="bigContainer">
 <h1>Мои альбомы</h1>
 <ul>
 {{#each userAlbums}}
-<li><a href="/albums/{{this.id}}">{{this.title}}</a><button id="deletealbum">Удалить альбом</button></li>
+<div class="container" data-id={{this.id}}>
+<li><a href="/albums/{{this.id}}">{{this.title}}</a></li>
+<button class="deletealbum">Удалить альбом</button>
+</div>
 {{/each}}
 </ul>
 
@@ -13,3 +17,5 @@
 <li><a href="/albums/{{this.id}}">{{this.title}}</a></li>
 {{/each}}
 </ul>
+</div>
+<script src="/js/deleteAlbum.js"></script>
