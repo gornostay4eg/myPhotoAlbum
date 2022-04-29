@@ -31,13 +31,17 @@ app.use(session({
   secret: 'session',
   resave: false,
   saveUninitialized: false,
-  cookie: { httpOnly: true },
+
+  cookie: { httpOnly:true },
+
   name: 'photo',
   store: new FileStore(),
 }));
 
 app.use((req, res, next) => {
+
   res.locals.userId = req.session?.user?.id;
+
   next();
 });
 
