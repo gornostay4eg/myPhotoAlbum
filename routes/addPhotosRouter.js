@@ -13,7 +13,9 @@ router
   .post(multer.single('src'), async (req, res) => {
     try {
       const album = await Album.findOne({ where: { title: req.body.albumName }, raw: true });
-      const newPhoto = await Photo.create({ ...req.body, src: req.file.path.slice(6),album_id: album.id, user_id: req.session.user.id });
+      const newPhoto = await Photo.create({
+        ...req.body, src: req.file.path.slice(6), album_id: album.id, user_id: req.session.user.id,
+      });
       res.redirect('/albums');
     } catch (error) {
       console.log('Errrooorr', error);
@@ -40,13 +42,17 @@ router
     const { id } = req.params;
     const photo = await Photo.findOne({ where: { id } });
     res.render('editphoto', { photo });
-  })
-  .put(checkAuth, async (req, res) => {
+  });
+
+router
+  .route('/put/:id')
+  .post(checkAuth, async (req, res) => {
+    const idPut = req.params.id;
     const {
-      title, img, userId, id,
+      title,
     } = req.body;
-    await Photo.update({ title, src: img, user_id: userId }, { where: { id } });
-    res.sendStatus(200);
+    await Photo.update({ title }, { where: { id: idPut } });
+    res.redirect(`/photos/${idPut}`);
   });
 
 module.exports = router;
