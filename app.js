@@ -1,6 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const hbs = require('hbs');
+const multer = require('multer');
+
+const upload = multer({ dest: 'uploads/' });
 const path = require('path');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);

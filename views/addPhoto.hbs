@@ -1,14 +1,10 @@
-    <div class="style">
-    <h1>Добавить фотографию</h1>
-    <form name="addPhoto">
-        <div class="d-flex-w-50">
+<center>
+    <br>
+    <form name="addPhoto" action="/photos/" method="post" enctype="multipart/form-data">
+        <div class="d-flex w-50">
             <div class="w-50">
-                <input type="text" name="title" class="form-control" placeholder="title">
-                </div>
-                <div class="forma">
-                <form enctype="multipart/form-data" method="post"></form>
-                <p><input type="file" name="src" size="5"></p>
-                </div>
+                <input type="file" name="src">
+
             </div>
             <div>
                 <p>Please select your photoalbum:</p>

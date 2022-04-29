@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 // /albums/addalbum - страница для создания нового альбома
 router.get('/addalbum', async (req, res) => res.render('addalbum'));
 
@@ -40,3 +41,16 @@ router.get('/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+// /albums/:id - удаляем альбом
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+    console.log(id);
+    try {
+      await Photo.destroy({ where: { album_id: id } });
+      await Album.destroy({ where: { id } });
+      res.sendStatus(200);
+    } catch (error) {
+      res.sendStatus(500);
+    }
+  });

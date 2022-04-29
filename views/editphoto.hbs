@@ -1,11 +1,15 @@
 <h1>Редактировать фото</h1>
 
 {{!-- ??????? --}}
-<form action="/photos/{{photo.id}}" method="post"> 
+<form action="/photos/put/{{photo.id}}" method="post"> 
 
-<div><img src="{{photo.src}}" alt="{{photo.title}}"></div>
+<div class="wrapper exmpl">
+      <img src="{{photo.src}}" alt="{{photo.title}}">
+    </div>
+{{!-- <div><img src="{{photo.src}}" alt="{{photo.title}}" width="200px" height="220px"></div> --}}
 <div>
 <label>
+<p>{{photo.title}}</p>
 <p>Редактировать описание:</p> 
 <input name="title" type="text">
 </label>
