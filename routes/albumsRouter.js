@@ -28,7 +28,6 @@ router.post('/addalbum', async (req, res) => {
   }
 });
 
-
 // /albums/:id - страница конкретного альбома
 router.get('/:id', async (req, res) => {
   try {
@@ -41,4 +40,3 @@ router.get('/:id', async (req, res) => {
 });
 
 module.exports = router;
-
