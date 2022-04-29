@@ -13,10 +13,7 @@ router
   .post(multer.single('src'), async (req, res) => {
     try {
       const album = await Album.findOne({ where: { title: req.body.albumName }, raw: true });
-      console.log('============================================');
-      console.log(req.files);
-      console.log('============================================');
-      const newPhoto = await Photo.create({ ...req.body, album_id: album.id, user_id: req.session.user.id });
+      const newPhoto = await Photo.create({ ...req.body, src: req.file.path.slice(6),album_id: album.id, user_id: req.session.user.id });
       res.redirect('/albums');
     } catch (error) {
       console.log('Errrooorr', error);

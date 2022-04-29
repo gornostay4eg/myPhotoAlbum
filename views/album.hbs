@@ -1,18 +1,20 @@
 <div class="bigContainer">
 <h1>{{thisAlbum.title}}</h1>
 <ul>
-{{#each photos}}
 {{#if userId}}
-<div class="container" data-id="{{this.id}}">
-<p><img src="{{this.src}}" alt="{{this.title}}"></p>
-<button onclick="http://localhost:3000/photos/edit/{{this.id}}">Редактировать фото</button>
+{{#each photos}}
+<div class="container" data-id={{this.id}}>
+<p><img src="{{this.src}}" alt="{{this.title}}" width="200" height="200"></p>
+<button ><a href="http://localhost:3000/photos/{{this.id}}">Редактировать фото</a></button>
+{{!-- <a type="button" src="http://localhost:3000/photos/{{this.id}}">редактировать фото</a> --}}
 <button class="deletephoto">Удалить фото</button>
 <p>{{this.title}}</p>
 </div>
 {{else}}
 <p><img src="{{this.src}}" alt="{{this.title}}"></p>
 <p>{{this.title}}</p>
-{{/if}}
 {{/each}}
+{{/if}}
 </ul>
 </div>
+<script src="/js/deletePhoto.js"></script>
